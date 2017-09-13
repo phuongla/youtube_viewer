@@ -2,6 +2,7 @@
  * Created by phuongla on 9/12/2017.
  */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class VideoDetail extends Component {
 
@@ -30,4 +31,11 @@ class VideoDetail extends Component {
     }
 }
 
-export default VideoDetail;
+function mapStateToProps(state) {
+    const { currentVideo } = state;
+    return {
+        currentVideo
+    };
+}
+
+export default connect(mapStateToProps)(VideoDetail);
